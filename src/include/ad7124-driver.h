@@ -17,7 +17,6 @@
 #define __AD7124_DRIVER_ARDUINO_H__
 /* ========================================================================== */
 #include "ad7124-defs.h"
-#include <SPI.h>
 /**
  * @class Ad7124Driver
  * @brief SPI driver
@@ -85,7 +84,7 @@ class Ad7124Driver {
     
   private:
     uint32_t speedMaximum;
-    BitOrder dataOrder;
+    uint8_t dataOrder;
     uint8_t dataMode;
 };
 /* ========================================================================== */

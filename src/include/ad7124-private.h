@@ -56,7 +56,7 @@ public:
     /**
      * @brief Initializes the AD7124
      */
-    int init (int slave_select, Ad7124Register * regs);
+    int init (int slave_select, Ad7124Register * regs, int clockFreq);
 
     /**
      * @brief Resets the device

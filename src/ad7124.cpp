@@ -26,11 +26,11 @@ using namespace Ad7124;
 
 // -----------------------------------------------------------------------------
 int
-Ad7124Chip::begin (int slave_select) {
+Ad7124Chip::begin (int slave_select, int clockFreq) {
   int ret;
 
   Ad7124Register::fillAllRegsWithDefault (reg);
-  ret = d.init (slave_select, reg);
+  ret = d.init (slave_select, reg, clockFreq);
   if (ret < 0) {
     return ret;
   }

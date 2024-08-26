@@ -198,9 +198,10 @@ class Ad7124Chip {
     /**
      * @brief Initializes the AD7124
      * @param slave_select The Slave Chip Select Id to be passed to the SPI calls
+     * @param clockFreq The clock frequency for the SPI interface. Default is 1MHz
      * @return 0 for success or negative error code
      */
-    int begin (int slave_select);
+    int begin (int slave_select, int clockFreq = 1000000);
 
     /**
      * @brief Resets the device

@@ -417,17 +417,17 @@ Ad7124Private::updateDevSpiSettings (void) {
 * @param slave_select - The Slave Chip Select Id to be passed to the SPI calls.
 * @param regs - The list of registers of the device (initialized or not) to be
 *               added to the instance of the driver.
-*
+* @param clockFreq - The desired SPI clock frequency in Hz. Example 1000 - 1kHz
 * @return Returns > 0 for success or negative error code.
 *******************************************************************************/
 int
-Ad7124Private::init (int slave_select, Ad7124Register * regs) {
+Ad7124Private::init (int slave_select, Ad7124Register * regs, int clockFreq) {
   int ret;
 
   reg = regs;
 
   /* Initialize the SPI communication. */
-  ret = drv.init (slave_select, false, 1000000, 1, 0);
+  ret = drv.init (slave_select, false, clockFreq, 1, 0);
   if (ret == false) {
     return AD7124_SPI_ERR;
   }
